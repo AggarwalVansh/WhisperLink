@@ -11,6 +11,7 @@
 #### `express.js`, `socket.io`
 
 # Installation
+[Youtube Tutorial](https://youtu.be/Mqx5iNnK1ag)
 
 ## **Type These in Terminal**
 
