@@ -7,9 +7,14 @@
   app
     .querySelector(".join-screen #join-user")
     .addEventListener("click", function () {
-      let username = app.querySelector(".join-screen #username").value;
-      if (username.length == 0) {
-        return;
+      let password = app.querySelector(".join-screen #pw").value;
+      if (password == "VANSH") {
+        let username = app.querySelector(".join-screen #username").value;
+        if (username.length == 0) {
+          return;
+        }
+      } else {
+        return 0;
       }
       socket.emit("newuser", username);
       uname = username;
