@@ -1,4 +1,4 @@
-# Simple Chat App
+# WhisperLink
 
 ## Change Log
 
