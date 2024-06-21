@@ -1,10 +1,12 @@
-# WhisperLink
+# WhisperLink Beta
 
 ## Change Log
 
-#### ; Added Main Menu Button when entered wrong password
+#### ; Added Config File
 
-#### ; Fix Exit Button not working in Chat Menu
+#### ; Added Customizable Port
+
+#### ; Added Customizable Password
 
 ## Description
 
