@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const port = `6969`;
+const port = `8788`;
 
 const app = express();
 const server = require("http").createServer(app);
@@ -24,4 +24,4 @@ io.on("connection", function (socket) {
 });
 
 server.listen(port);
-console.log(`Your Chat App is working properly on http://localhost:6969`);
+console.log(`Your Chat App is working properly on http://localhost:${port}`);
