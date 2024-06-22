@@ -1,22 +1,16 @@
 (function () {
   const app = document.querySelector(".app");
   const socket = io();
-
   let uname;
 
   app
     .querySelector(".join-screen #join-user")
     .addEventListener("click", function () {
       let username = app.querySelector(".join-screen #username").value;
-      let password = app.querySelector(".join-screen #pw").value;
-      if (password == "VANSH") {
-        if (username.length == 0) {
-          return;
-        }
-      } else {
-        app.querySelector(".join-screen").classList.remove("active");
-        app.querySelector(".wrong-password").classList.add("active");
+      if (username.length == 0) {
+        return;
       }
+
       socket.emit("newuser", username);
       uname = username;
       app.querySelector(".join-screen").classList.remove("active");
@@ -61,21 +55,21 @@
       let el = document.createElement("div");
       el.setAttribute("class", "message my-message");
       el.innerHTML = `
-              <div>
-                  <div class="name">You</div>
-                  <div class="text">${message.text}</div>
-              </div>
-              `;
+            <div>
+                <div class="name">You</div>
+                <div class="text">${message.text}</div>
+            </div>
+            `;
       messageContainer.appendChild(el);
     } else if (type == "other") {
       let el = document.createElement("div");
       el.setAttribute("class", "message other-message");
       el.innerHTML = `
-              <div>
-                  <div class="name">${message.username}</div>
-                  <div class="text">${message.text}</div>
-              </div>
-              `;
+            <div>
+                <div class="name">${message.username}</div>
+                <div class="text">${message.text}</div>
+            </div>
+            `;
       messageContainer.appendChild(el);
     } else if (type == "update") {
       let el = document.createElement("div");

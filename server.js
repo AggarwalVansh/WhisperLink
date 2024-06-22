@@ -1,6 +1,8 @@
+const settings = require("./public/core/settings.js");
 const express = require("express");
 const path = require("path");
-const port = `8788`;
+const port = settings.port;
+const gradient = require("gradient-string");
 
 const app = express();
 const server = require("http").createServer(app);
@@ -24,4 +26,10 @@ io.on("connection", function (socket) {
 });
 
 server.listen(port);
-console.log(`███████████████████████████████████████████████████████████████████\n█▄─█▀▀▀█─▄█─█─█▄─▄█─▄▄▄▄█▄─▄▄─█▄─▄▄─█▄─▄▄▀█▄─▄███▄─▄█▄─▀█▄─▄█▄─█─▄█\n██─█─█─█─██─▄─██─██▄▄▄▄─██─▄▄▄██─▄█▀██─▄─▄██─██▀██─███─█▄▀─███─▄▀██\n▀▀▄▄▄▀▄▄▄▀▀▄▀▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▀▄▄▀\nWhisperLink is connected successfully And Working on http://localhost:${port}`);`);
+console.log(
+  gradient(
+    "lime",
+    "yellow"
+  )(`
+███████████████████████████████████████████████████████████████████\n█▄─█▀▀▀█─▄█─█─█▄─▄█─▄▄▄▄█▄─▄▄─█▄─▄▄─█▄─▄▄▀█▄─▄███▄─▄█▄─▀█▄─▄█▄─█─▄█\n██─█─█─█─██─▄─██─██▄▄▄▄─██─▄▄▄██─▄█▀██─▄─▄██─██▀██─███─█▄▀─███─▄▀██\n▀▀▄▄▄▀▄▄▄▀▀▄▀▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▀▄▄▀\nWhisperLink is connected successfully And Working on http://localhost:${port}`)
+);

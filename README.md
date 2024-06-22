@@ -1,27 +1,25 @@
-# WhisperLink
+# WhisperLink Canary
 
 ## Change Log
 
-#### ; Added Main Menu Button when entered wrong password
+#### ; Registration is now available.
 
-#### ; Fix Exit Button not working in Chat Menu
+#### ; Registration isnt properly working
 
 ## Description
 
 #### It is simple chat app, totally made using Express.JS and Socket.io in Node.JS
 
-#### Added password feature in the login page, default password is `VANSH` ;;;
-
 ## Packages
 
-#### `express.js`, `socket.io`
+#### `express.js`, `socket.io`, `gradient-string`
 
 # Installation
 
 ## **Type These in Terminal**
 
 ```bash
-npm i express.js socket.io --save
+npm i express.js socket.io gradient-string --save
 ```
 
 # Usage
