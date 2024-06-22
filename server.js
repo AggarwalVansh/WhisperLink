@@ -1,1 +1,27 @@
-function _0x48cc(_0x35b6a7,_0x2b8c0c){const _0x1460a1=_0x1460();return _0x48cc=function(_0x48cc5a,_0x2a71ba){_0x48cc5a=_0x48cc5a-0x17c;let _0x3e3635=_0x1460a1[_0x48cc5a];return _0x3e3635;},_0x48cc(_0x35b6a7,_0x2b8c0c);}function _0x1460(){const _0x22e77e=['createServer','791244Sxepgr','12jXVLIs','emit','chat','join','10yVLaPj','71670rXrqUW','███████████████████████████████████████████████████████████████████\x0a█▄─█▀▀▀█─▄█─█─█▄─▄█─▄▄▄▄█▄─▄▄─█▄─▄▄─█▄─▄▄▀█▄─▄███▄─▄█▄─▀█▄─▄█▄─█─▄█\x0a██─█─█─█─██─▄─██─██▄▄▄▄─██─▄▄▄██─▄█▀██─▄─▄██─██▀██─███─█▄▀─███─▄▀██\x0a▀▀▄▄▄▀▄▄▄▀▀▄▀▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▀▄▄▀\x0aWhisperLink\x20is\x20connected\x20successfully\x20And\x20Working\x20on\x20http://localhost:','6627897mICnuS','listen','broadcast','exituser','\x20joined\x20the\x20conversation','2dezFvU','16668fRFarr','use','log','579ZeqHTP','6176152wtNVWK','385KtPeiv','769160RVgUjs','http','695377nTKfGV','static','socket.io','newuser'];_0x1460=function(){return _0x22e77e;};return _0x1460();}const _0x1a0816=_0x48cc;(function(_0x299b92,_0x364838){const _0x522016=_0x48cc,_0x2aabf8=_0x299b92();while(!![]){try{const _0x51ca3e=-parseInt(_0x522016(0x185))/0x1*(-parseInt(_0x522016(0x17c))/0x2)+parseInt(_0x522016(0x180))/0x3*(-parseInt(_0x522016(0x17d))/0x4)+-parseInt(_0x522016(0x190))/0x5+-parseInt(_0x522016(0x18b))/0x6*(parseInt(_0x522016(0x183))/0x7)+-parseInt(_0x522016(0x181))/0x8+parseInt(_0x522016(0x192))/0x9*(-parseInt(_0x522016(0x18f))/0xa)+parseInt(_0x522016(0x182))/0xb*(parseInt(_0x522016(0x18a))/0xc);if(_0x51ca3e===_0x364838)break;else _0x2aabf8['push'](_0x2aabf8['shift']());}catch(_0x11fdba){_0x2aabf8['push'](_0x2aabf8['shift']());}}}(_0x1460,0x6f6cb));const express=require('express'),path=require('path'),port='8788',app=express(),server=require(_0x1a0816(0x184))[_0x1a0816(0x189)](app),io=require(_0x1a0816(0x187))(server);app[_0x1a0816(0x17e)](express[_0x1a0816(0x186)](path[_0x1a0816(0x18e)](__dirname+'/public'))),io['on']('connection',function(_0x365e05){const _0x948b79=_0x1a0816;_0x365e05['on'](_0x948b79(0x188),function(_0x149204){const _0x5d4428=_0x948b79;_0x365e05[_0x5d4428(0x194)][_0x5d4428(0x18c)]('update',_0x149204+_0x5d4428(0x196));}),_0x365e05['on'](_0x948b79(0x195),function(_0x40abdb){const _0xe99344=_0x948b79;_0x365e05[_0xe99344(0x194)][_0xe99344(0x18c)]('update',_0x40abdb+'\x20left\x20the\x20conversation');}),_0x365e05['on'](_0x948b79(0x18d),function(_0x21432b){const _0x342967=_0x948b79;_0x365e05['broadcast'][_0x342967(0x18c)](_0x342967(0x18d),_0x21432b);});}),server[_0x1a0816(0x193)](port),console[_0x1a0816(0x17f)](_0x1a0816(0x191)+port);
+const express = require("express");
+const path = require("path");
+const port = `8788`;
+
+const app = express();
+const server = require("http").createServer(app);
+
+const io = require("socket.io")(server);
+
+app.use(express.static(path.join(__dirname + "/public")));
+
+io.on("connection", function (socket) {
+  socket.on("newuser", function (username) {
+    socket.broadcast.emit("update", username + " joined the conversation");
+  });
+
+  socket.on("exituser", function (username) {
+    socket.broadcast.emit("update", username + " left the conversation");
+  });
+
+  socket.on("chat", function (message) {
+    socket.broadcast.emit("chat", message);
+  });
+});
+
+server.listen(port);
+console.log(`███████████████████████████████████████████████████████████████████\n█▄─█▀▀▀█─▄█─█─█▄─▄█─▄▄▄▄█▄─▄▄─█▄─▄▄─█▄─▄▄▀█▄─▄███▄─▄█▄─▀█▄─▄█▄─█─▄█\n██─█─█─█─██─▄─██─██▄▄▄▄─██─▄▄▄██─▄█▀██─▄─▄██─██▀██─███─█▄▀─███─▄▀██\n▀▀▄▄▄▀▄▄▄▀▀▄▀▄▀▄▄▄▀▄▄▄▄▄▀▄▄▄▀▀▀▄▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▄▄▀▄▄▄▀▀▄▄▀▄▄▀▄▄▀\nWhisperLink is connected successfully And Working on http://localhost:${port}`);`);
