@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WhisperLink Canary</title>
+    <title>WhisperLink</title>
     <link rel="icon" type="image/x-icon" href="./core/index.ico" />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
@@ -11,16 +10,15 @@
     <div class="app">
       <div class="screen join-screen active">
         <div class="form">
-          <h2>Join WhisperLink Canary</h2>
+          <h2>Join WhisperLink</h2>
           <div class="form-input">
             <label>Name</label>
-            <input type="text" id="username" placeholder="Enter Name" />
+            <input type="text" id="username" />
+            <label>Password</label>
+            <input type="password" id="pw" />
           </div>
           <div class="form-input">
             <button id="join-user">Join</button>
-            <button id="join-user">
-              <a class="btn" href="register.html"> Register </a>
-            </button>
           </div>
         </div>
       </div>
@@ -37,12 +35,12 @@
       </div>
       <div class="screen chat-screen">
         <div class="header">
-          <div class="logo">WhisperLink Canary</div>
+          <div class="logo">WhisperLink</div>
           <button id="exit-chat">Exit</button>
         </div>
         <div class="messages"></div>
         <div class="typebox">
-          <input type="text" id="message-input" placeholder="Enter Message" />
+          <input type="text" id="message-input" />
           <button id="send-message">Send</button>
         </div>
       </div>
