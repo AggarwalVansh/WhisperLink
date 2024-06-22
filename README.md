@@ -2,11 +2,9 @@
 
 ## Change Log
 
-#### ; Added Config File
+#### ; Removed Password Option
 
-#### ; Added Customizable Port
-
-#### ; Added Customizable Password
+#### ; Added Placeholders
 
 ## Description
 
@@ -16,14 +14,14 @@
 
 ## Packages
 
-#### `express.js`, `socket.io`
+#### `express.js`, `socket.io`, `gradient-string`
 
 # Installation
 
 ## **Type These in Terminal**
 
 ```bash
-npm i express.js socket.io --save
+npm i express.js socket.io gradient-string --save
 ```
 
 # Usage
