@@ -2,9 +2,7 @@
 
 ## Change Log
 
-#### ; Added Main Menu Button when entered wrong password
-
-#### ; Fix Exit Button not working in Chat Menu
+#### ; Removed Password
 
 ## Description
 
